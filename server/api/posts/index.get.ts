@@ -6,7 +6,5 @@ export default defineEventHandler(async (event) => {
     include: { author: true },
   });
 
-  return {
-    data: posts,
-  };
+  return posts;
 });
