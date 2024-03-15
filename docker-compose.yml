@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=mysql://root:password@db:3306/my_database
+    depends_on:
+      - db
+      - migration
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: my_database
+    ports:
+      - "3307:3306"
+  migration:
+    build: .
+    environment:
+      - DATABASE_URL=mysql://root:password@db:3306/my_database
+    depends_on:
+      - db
+    command: ["npx", "prisma", "migrate", "deploy"]
