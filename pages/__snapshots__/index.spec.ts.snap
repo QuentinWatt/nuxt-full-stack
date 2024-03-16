@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`It matches the snapshot 1`] = `
-"<main>
+"<main class="container mx-auto px-3 py-6">
   <h1 class="text-3xl font-bold underline"> Hello world! </h1>
 </main>"
 `;

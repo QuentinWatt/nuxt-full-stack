@@ -4,9 +4,9 @@
 </script>
 
 <template>
-  <div>
+  <div class="min-h-screen bg-gray-800">
     <MainHeader />
-    <slot />
+    <div class="bg-white"><slot /></div>
 
     <MainFooter />
   </div>
